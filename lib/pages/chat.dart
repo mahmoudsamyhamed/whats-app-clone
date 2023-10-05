@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whats_app_clone/dummy_data/chat_list.dart';
 import 'package:whats_app_clone/widgets/chat_card.dart';
 
 class Chat extends StatefulWidget {
@@ -17,9 +18,11 @@ class _ChatState extends State<Chat> {
         child: const Icon(Icons.chat),
       ),
       body: ListView.builder(
-        itemCount: 2,
+        itemCount: chatList.length,
         itemBuilder: (context, index) {
-          return const ChatCard();
+          return ChatCard(
+            chat: chatList[index],
+          );
         },
       ),
     );
