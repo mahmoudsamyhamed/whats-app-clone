@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:whats_app_clone/models/chatModel.dart';
+import 'package:whats_app_clone/screens/chat_screen.dart';
 
 class ChatCard extends StatelessWidget {
   const ChatCard({super.key, required this.chat});
@@ -40,7 +41,14 @@ class ChatCard extends StatelessWidget {
               ),
             ],
           ),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ChatScreen(chat: chat),
+              ),
+            );
+          },
           splashColor: Colors.grey,
         ),
       ],
